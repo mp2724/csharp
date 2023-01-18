@@ -1,0 +1,273 @@
+FIBONOCCI SERIES:
+
+using System;
+
+namespace demo1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int val1 =0, val2 = 1, val3, i;
+            Console.WriteLine("Enter the number of fibonocci series:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("fibonocci series are:");
+            Console.Write(val1 + " " + val2 + " ");
+            for(i=2; i<n;++i)
+            {
+                val3 = val1 + val2;
+                Console.Write(val3 + " ");
+                val1 = val2;
+                val2 = val3;
+            }
+        }
+    }
+}
+======================================================================================
+
+PRIME NUMBER OR NOT:
+
+using System;
+
+namespace demo1
+{
+    class prime
+    {
+        public static void Main(string[] args)
+        {
+            int n, i, m = 0, flag = 0;
+            Console.WriteLine("Enter a number:");
+            n = Convert.ToInt32(Console.ReadLine());
+            m = n / 2;
+            for(i=2;i<m;i++)
+            {
+                if(n%i==0)
+                {
+                    Console.Write(n + " is not a prime number");
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0)
+                Console.Write(n + " is a prime number");
+        }
+    }
+}
+=========================================================================================
+
+PALINDROME OR NOT:
+
+using System;
+
+namespace demo1
+{
+    class palindrome
+    {
+        public static void Main(string[] args)
+        {
+            int n, r, sum = 0, temp;
+            Console.WriteLine("Enter a number:");
+            n = Convert.ToInt32(Console.ReadLine());
+            temp = n;
+            while(n>0)
+            {
+                r = n % 10;
+                sum = (sum * 10) + r;
+                n = n / 10;
+            }
+            if (temp == sum)
+                Console.WriteLine(temp + " is a Palindrome");
+            else
+                Console.WriteLine(temp + " is not a Palindrome");
+        }
+    }
+}
+=========================================================================================
+
+FACTORIAL OF A NUMBER:
+
+using System;
+
+namespace demo1
+{
+    class factorial
+    {
+        static void Main(string[] args)
+        {
+            int i, fact = 1, num;
+            Console.Write("Enter a number:");
+            num= Convert.ToInt32(Console.ReadLine());
+            for(i=1;i<=num;i++)
+            {
+                fact = fact * i;
+            }
+            Console.Write("Factorial of " + num + " is: " + fact);
+        }
+    }
+}
+=========================================================================================
+
+AMSTRONG NUMBER OR NOT:
+
+using System;
+
+namespace demo1
+{
+    class amstrong
+    {
+        static void Main(string[] args)
+        {
+            int num, r,sum=0,temp;
+            Console.Write("Enter a number:");
+            num = Convert.ToInt32(Console.ReadLine());
+            temp = num;
+            while(num>0)
+            {
+                r = num % 10;
+                sum = sum + (r * r * r);
+                num = num / 10;
+            }
+            if (temp == sum)
+                Console.WriteLine(temp + " is an amstrong number");
+            else
+                Console.WriteLine(temp + " is not an amstrong number");
+        }
+    }
+}
+=========================================================================================
+
+SUM OF DIGITS OF A NUMBER:
+
+using System;
+
+namespace demo1
+{
+    class sumofdigits
+    {
+        static void Main(string[] args)
+        {
+            int num,temp,sum=0,n;
+            Console.Write("Enter a number:");
+            num = Convert.ToInt32(Console.ReadLine());
+            n = num;
+            while (num > 0)
+            {
+                temp = num % 10;
+                sum = sum + temp;
+                num = num / 10;
+            }
+            Console.WriteLine("sum of digits of " + n + " is " + sum);
+        }
+    }
+}
+=========================================================================================
+
+REVERSE OF A NUMBER:
+
+using System;
+
+namespace demo1
+{
+    class reverse
+    {
+        static void Main(string[] args)
+        {
+            int num,rev=0,r,n;
+            Console.Write("Enter a number:");
+            num = Convert.ToInt32(Console.ReadLine());
+            n = num;
+            while (num != 0)
+            {
+                r = num % 10;
+                rev = rev * 10 + r;
+                num = num / 10;
+            }
+            Console.WriteLine("reverse of " + n +" is "+ rev);
+        }
+    }
+}
+=========================================================================================
+
+SWAPPING TWO NUMBERS WITHOUT USING THIRD VARIABLE:
+ 
+using System;
+
+namespace demo1
+{
+    class swap
+    {
+        static void Main(string[] args)
+        {
+            int a, b;
+            Console.Write("Enter a value: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter b value: ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("before swapping values of a and b are \n" + a +" "+ b);
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine("after swapping values of a and b are \n" + a +" "+ b);
+        }
+    }
+}
+=========================================================================================
+
+ALPHABET TRIANGLE:
+
+using System;
+
+namespace demo1
+{
+    class alphabettriangle
+    {
+        static void Main(string[] args)
+        {
+            char ch = 'A';
+            int i, j, k, m,n;
+            Console.Write("Enter Range: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i=1;i<=n;i++)
+            {
+                for (j = n; j >= i; j--)
+                    Console.Write(" ");
+                for (k = 1; k <= i; k++)
+                    Console.Write(ch++);
+                ch--;
+                for (m = 1; m < i; m++)
+                    Console.Write(--ch);
+                Console.Write("\n");
+                ch = 'A';
+            }
+        }
+    }
+}
+=========================================================================================
+
+NUMBER TRIANGLE:
+
+using System;
+
+namespace demo1
+{
+    class numbertriangle
+    {
+        static void Main(string[] args)
+        {
+            int i, j, k, m, n;
+            Console.Write("Enter Range: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= n; i++)
+            {
+                for (j = 1; j <= n-i; j++)
+                    Console.Write(" ");
+                for (k = 1; k <= i; k++)
+                    Console.Write(k);
+                ch--;
+                for (m = i-1; m>=1; m--)
+                    Console.Write(m);
+                Console.Write("\n");
+            }
+        }
+    }
+}
